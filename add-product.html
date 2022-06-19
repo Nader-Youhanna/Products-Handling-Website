@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products Add</title>
+        <link rel = "stylesheet" href = "style.css?v=<?php echo time(); ?>">
+        
+        <script src="./add-product.js"></script>
+    </head>
+    
+    <body onload = "initialize()">
+       
+        <!--Top Bar Begins Here-->
+        <section  class = "top-bar">
+            <div class = "top-bar-container">
+                <div class = "top-bar-box1-add-page">Product Add</div>
+                <div class = "top-bar-box2">
+                    <a href="#" id = "save-btn" onclick="saveBtn()">Save</a>
+                </div>
+                <div class = "top-bar-box3">
+                    <a href="#" id = "cancel-btn">Cancel</a>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <!--Top Bar Ends Here-->
+
+        
+        <!--Form Begins Here-->
+        <form id = "product_form" method = "post" action = "./backend.php">
+            <label for="SKU" id = "sku-label">SKU</label>
+            <input type="text" id="SKU" name = "SKU"><br><br>
+            <label for="Name" id = "name-label">Name</label>
+            <input type="text" id="name" name="Name"><br><br>
+            <label for="Price" id = "price-label">Price ($)</label>
+            <input type="number" id="price" name="Price"><br><br>
+            <label for="typeSwitcher">Type Switcher</label>
+            <select id = "product_type" name="typeSwitcher" onchange="showAppropriate(this.value)">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="DVD">DVD</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Books">Books</option>
+            </select>
+            <br><br>
+            <div id = "product-attributes">
+                <label for="Size" id = "size-label">Size (MB)</label>
+                <input type="text" id="size" name="Size">
+                <br><br>
+                <label for="Height" id = "height-label">Height (CM)</label>
+                <input type="number" id="height" name="Height">
+                <br><br>
+                <label for="Width" id = "width-label">Width (CM)</label>
+                <input type="number" id="width" name="Width">
+                <br><br>
+                <label for="Length" id = "length-label">Length (CM)</label>
+                <input type="number" id="length" name="Length">
+                <br><br>
+                <label for="Weight" id = "weight-label">Weight (KG)</label>
+                <input type="number" id="weight" name="Weight">
+                <br><br>
+            </div>
+        </form>
+
+
+        <!--Form Ends Here-->
+
+    </body>
+</html>
